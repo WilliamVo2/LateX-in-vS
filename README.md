@@ -4,7 +4,7 @@
 
 ## Features:
 ![math](math.png)
-![NFA](nfa.png)
+
 
 - Create table, pictorial diagram.
 - Create math function in LateX.
