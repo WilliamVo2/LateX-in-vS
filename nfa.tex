@@ -1,0 +1,66 @@
+\documentclass{scrartcl}
+\usepackage{tikz}
+\usetikzlibrary{arrows, automata}
+\usepackage{comment}
+\usepackage{amsmath}
+
+\begin{document}
+A \textbf{nondeterministic finite automation} is define as, \\
+M = \{Q, $\sum$, $\delta$, $q_0$, F \}\\
+where: \\
+1. Q is a finite set of states,\\
+2. $\sum$ is the finite alphabet,\\
+3. $\delta$ is transition function\\
+4. $q_0$ is the start state\\
+5. F $\subseteq$ Q is the set of accept states. \\
+
+\textit{As NFA defined on Page 54 of ITC}\\
+textbook.\\
+
+% begin math model
+$
+Q = \{q_1, q_2, q_3, q_4\} \\
+\sum = \{0, 1\}\\
+F = \{q_4\}\\
+q_0 = q_1 \\
+\delta = \{
+            ((q_1, 0), \{q_1\}), ((q_1, 1), \{q_1, q_2\}), ((q_1, \epsilon), \phi), \\
+            ((q_2, 0), \{q_3\}), ((q_2, 1),\phi), ((q_2, \epsilon), \{q_3\}), \\
+            ((q_3, 0), \phi), ((q_3, 1), \{q_4\}), ((q_3, \epsilon), \phi), \\
+            ((q_4, 0), \{q_4\}), ((q_4, 1), \{q_4\}), ((q_4, \epsilon), \phi)
+\} \\
+$
+%end math model
+
+Transition Function in Table form: \\
+\begin{center}
+  \begin{tabular}{||c c c c||}
+    \hline
+    \space  &0      &1              &$\epsilon$    \\[0.5ex]
+    \hline
+    $q_1$          & \{$q_1$\}      & \{$q_1$, $q_2$\}    &$\phi$        \\
+    \hline
+    $q_2$          & \{$q_3$\}      & $\phi$              & \{$q_3$\}    \\
+    \hline
+    $q_3$          & $\phi$         & \{$q_4$\}           & $\phi$       \\
+    \hline
+    $q_4$          & \{$q_4$\}      & \{$q_4$\}           & $\phi$       \\
+    \hline
+  \end{tabular}
+\end{center}
+
+NFA in pictorial form: \\
+
+\begin{tikzpicture}[>=stealth',shorten >=1pt, auto, node distance=2cm]
+  \node[initial, state]       (q1)                  {$q_1$};
+  \node[state]                (q2)[right of=q1]     {$q_2$};
+  \node[state]                (q3)[right of=q2]     {$q_3$};
+  \node[state, accepting]     (q4)[right of=q3]     {$q_4$};
+
+  \path[->](q1) edge [loop above]    node {0, 1}(q1)
+                edge [bend right]    node {1} (q2)
+          (q2)  edge                 node {0, $\epsilon$} (q3)
+          (q3)  edge [bend left]     node {1} (q4) 
+          (q4)  edge [loop above]    node {0, 1} (q4);
+\end{tikzpicture}
+\end{document}
