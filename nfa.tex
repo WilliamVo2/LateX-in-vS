@@ -63,4 +63,30 @@ NFA in pictorial form: \\
           (q3)  edge [bend left]     node {1} (q4) 
           (q4)  edge [loop above]    node {0, 1} (q4);
 \end{tikzpicture}
+
+Example 3:
+ \textbf{\textit{DFA, state diagram of machine M}}
+\begin{center}
+  \begin{tikzpicture}[>=stealth',shorten >=2pt, auto, node distance=5cm]
+    %define states in the machine
+    \node[initial, state, accepting] (q3) {$q_3$};
+    \node[state]  (q2) [above of= q3] {$q_2$};
+    \node[state]  (q1) [right of= q2] {$q_1$};
+    \node[state]  (q4) [below of=q3] {$q_4$};
+    \node[state]  (q5) [right of=q4]  {$q_5$};
+
+    %define the links
+    \path[->] (q1) edge[loop above] node{u}  (q1)
+                   edge             node{d}  (q2)
+              (q2) edge[bend left]  node{d}  (q1)
+                   edge             node{d}  (q3)
+              (q3) edge[bend left]  node{u}  (q2)
+                   edge             node{d}  (q4)
+              (q4) edge[bend left]  node{u}  (q3)
+                   edge             node{d}  (q5)
+              (q5) edge[bend left]  node{u}  (q4)
+                   edge[loop above] node{d}  (q5);
+  \end{tikzpicture}
+\end{center}
+
 \end{document}
