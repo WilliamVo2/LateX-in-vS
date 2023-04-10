@@ -90,7 +90,7 @@ Example 3:
 \end{center}
 
 Example 4: 
-\textbf{textit{Machine DFA has 02 languages and it combine:}}\\
+\textbf{Machine DFA has 02 languages and it combine:}\\
 \{w$|$ w has at least three a's\}\\
 \begin{center}
   \begin{tikzpicture}[>=stealth',shorten >=1pt,auto, node distance=2cm]
@@ -127,6 +127,7 @@ Example 4:
     (q2) edge [loop above] node {a} (q2)
     edge    node {b} (q3)
     (q3) edge [loop above] node {a} (q4)
+         edge  node {b} (q4)
     (q4) edge [loop above] node {a,b} (q4); 
   \end{tikzpicture}
 \end{center}
