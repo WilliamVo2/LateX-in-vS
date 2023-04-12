@@ -3,6 +3,9 @@
 \usetikzlibrary{arrows, automata}
 \usepackage{comment}
 \usepackage{amsmath}
+\usepackage{qtree}
+\usepackage{textcomp}
+\usepackage{tree-dvips}
 
 \begin{document}
 
@@ -212,5 +215,31 @@ Regular expression and it diagram DFA:
                 
   \end{tikzpicture}
 \end{center}
+
+\textbf{\{w $|$ w = $w^R$,. that is, w is a palindrome\}}\\
+\begin{center}
+      S $\rightarrow $ 0S0 $|$ 1S1 $|$ 0 $|$ 1 $|$ $\epsilon$ \\
+\end{center}
+\textit{Informal description: We begin by pushing the symbols read onto the stack. At each point we will nondeterministically guess if the middle of the string has been  reached or if  the next symbol read is the middle of the string and will not  be put on  the stack. Then we  pop off the symbols from the stack if they match the input symbol read. If the symbol popped are exactly the same symbols that were pushed on earlier and the stack empties as the input is finished, ten accept. Otherwise, reject.}\\
+
+\begin{center}
+  \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm]
+% define the states in the machine
+  \node[initial,state, accepting] 	(q1)      				{$q_1$};
+  \node[state]  	(q2) [right of=q1]           	{$q_2$};
+  \node[state]         		(q3) [right of=q2]  	{$q_3$};
+  \node[state, accepting]    (q4) [right of=q3]  	{$q_4$};
+
+     % define the links
+  \path[->] (q1)  edge  	node {$\epsilon,\epsilon \rightarrow $ \$  }	(q2)
+             
+  (q2) edge [loop below, align=center]  	node {$0, \epsilon \rightarrow 0$ \\ $1, \epsilon \rightarrow 1$ } 	(q2)
+       edge [bend left, align=center] node {$0, \epsilon \rightarrow \epsilon$ \\ $1, \epsilon \rightarrow \epsilon$ \\ $\epsilon, \epsilon \rightarrow \epsilon$}  	(q3)
+  (q3) edge [loop below, align=center]  node {$0, 0 \rightarrow \epsilon$ \\ $1, 1 \rightarrow \epsilon$} 	(q3)
+       edge   node {$\epsilon$, \$ $\rightarrow \epsilon $} (q4);
+
+  \end{tikzpicture}
+\end{center}
+
 
 \end{document}
