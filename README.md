@@ -7,6 +7,7 @@
 ![M machine](mMachine.png)
 ![regular](regrex.png)
 ![palindrome](palindrome.png)
+![D-machine](D-machine.png)
 
 
 - Create table, pictorial diagram.
@@ -14,6 +15,7 @@
 - Create dfa and nfa machine.
 - Regular expression and its DFA diagram.
 - Palindrome diagram.
+- Pictorial for regular expression: (aa|ba|bb)∗(a|b)
 
 ## Set up:
 - `brew install --cask mactex`
