@@ -241,5 +241,44 @@ Regular expression and it diagram DFA:
   \end{tikzpicture}
 \end{center}
 
+%Regular expression
+\textbf{Example 4: D=\{w$|$w contains an even number of a's and odd number of b's and does not contain the substring ab\}}\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state]    (q0) 
+{$q_0$};
+  \node[state, accepting]   (q1)   [right of=q0]  	    
+{$q_1$};
+\node[state]    (q3)  [below right of=q1]
+{$q_3$};
+  
+\node[state]    (q4)  [ below left of=q3]
+{$q_4$};
+ \node[state]   (q2)   [below right of=q4]  	    
+{$q_2$};
+ \node[state]   (q5)   [ right of=q2]  	    
+{$q_5$};
+  
+% define the links
+  \path[->] (q0) edge  node {a} (q1)
+             edge [bend right] node {b} (q2)
+        (q1) edge  [bend left] node {a} (q3)
+             edge  [bend left] node {b} (q4)
+        (q2) edge [bend left]  node {b}  (q5)
+             
+        (q3) edge   node {a}  (q1)
+             edge  [bend left] node {b}   (q2)
+        (q4) edge [bend left]  node {a} (q1)
+             edge  [bend left] node {b} (q2)
+        (q5) edge  [bend right] node {a} (q1)
+             edge   node {b}  (q2);
+                
+                                              
+ \end{tikzpicture}
+\end{center}
+\textbf{ regular expression:   $(aa|ba|bb)^*(a|b)$ }\\
 
 \end{document}
