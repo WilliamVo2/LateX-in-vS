@@ -281,4 +281,36 @@ Regular expression and it diagram DFA:
 \end{center}
 \textbf{ regular expression:   $(aa|ba|bb)^*(a|b)$ }\\
 
+\textbf{4b. \{w$|$ w contains the substring 0101, e.x. w = x0101y for some x and y\}}\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state]     (q1) 
+{$q_1$};
+  \node[state]   (q2)   [above right of=q1]  	    
+{$q_2$};
+  \node[state]   (q3)   [below right of=q2]
+{$q_3$};
+  \node[state]   (q4)   [right of=q3]
+{$q_4$};
+  \node[state, accepting]   (q5)  [right of=q4] 
+{$q_5$};
+  
+% define the links
+  \path[->] (q1) edge [loop above] node {1} 	(q1)
+             edge               node {0} 	(q2)
+        (q2) edge  [loop above] node {0}  (q2)
+             edge              node {1} (q3)
+        (q3) edge              node {1} (q1)
+             edge               node {0}  (q4)
+        (q4) edge  [loop above] node {0}  (q4)
+             edge              node {1}   (q5)
+        (q5) edge  [loop above] node {0,1} (q5);
+                               
+ \end{tikzpicture}
+\end{center}
+
+
 \end{document}
