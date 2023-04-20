@@ -8,6 +8,7 @@
 ![regular](regrex.png)
 ![palindrome](palindrome.png)
 ![D-machine](D-machine.png)
+![picSum](picSum.png)
 
 
 - Create table, pictorial diagram.
@@ -16,6 +17,8 @@
 - Regular expression and its DFA diagram.
 - Palindrome diagram.
 - Pictorial for regular expression: (aa|ba|bb)∗(a|b)
+- ![sum](sum.png) in regular expression
+
 
 ## Set up:
 - `brew install --cask mactex`
