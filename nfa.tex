@@ -350,5 +350,73 @@ Regular expression and it diagram DFA:
 \end{center}
 \textbf{4c.  $(0\cup 1\sum)(\sum\sum)^*$ }  in regular expression\\
 
+\textbf{5. Give an NFA recognizing the language $(01\cup 001 \cup 010)^*$}\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state, accepting]    (q0) 
+{$q_0$};
+  \node[state]   (q1)   [right of=q0]  	    
+{$q_1$};
+  \node[state]    (q2)  [above right of=q1]
+{$q_2$}; 
+ \node[state]    (q3)  [right of=q2]
+{$q_3$};
+ \node[state]    (q4)  [right of=q3] 
+{$q_4$};
+  \node[state, accepting]   (q5)   [right of=q4]  	    
+{$q_5$};
+  \node[state]    (q6)  [below right of=q1]
+{$q_6$}; 
+ \node[state]    (q7)  [right of=q6]
+{$q_7$};
+ \node[state]    (q8)  [right of=q7]
+{$q_8$};
+  \node[state]   (q9)   [right of=q8]  	    
+{$q_9$};
+  \node[state]    (q10)  [right of=q9]
+{$q_10$}; 
+ \node[state, accepting]    (q11)  [right of=q10]
+{$q_11$};
+ \node[state]    (q12)  [below of=q6]
+{$q_12$};
+  \node[state]   (q13)   [right of=q12]  	    
+{$q_13$};
+  \node[state]    (q14)  [right of=q13]
+{$q_14$}; 
+ \node[state]    (q15)  [right of=q14]
+{$q_15$};
+ \node[state]    (q16)  [right of=q15]
+{$q_16$};
+ \node[state, accepting]    (q17)  [right of=q16]
+{$q_17$};
+ 
+% define the links
+  \path[->] (q0) edge  node {$\epsilon$} (q1)
+             
+        (q1) edge  [bend left] node {$\epsilon$} (q2)
+             edge  [bend right] node {$\epsilon$} (q6)
+             edge  [bend right] node {$\epsilon$} (q12)
+        (q2) edge   node {0}  (q3)
+        (q3) edge   node {$\epsilon$}  (q4)
+        (q4) edge   node {1}  (q5)
+        (q5) edge   [bend left] node {$\epsilon$} (q1)
+        (q6) edge   node {0}  (q7)
+        (q7) edge   node {$\epsilon$} (q8)
+        (q8) edge   node {0}   (q9)
+        (q9) edge   node {$\epsilon$} (q10)
+        (q10) edge  node {1}  (q11)
+        (q11) edge  [bend left] node {$\epsilon$} (q1)
+        (q12) edge  node {0}    (q13)
+        (q13) edge  node {$\epsilon$} (q14)
+        (q14) edge  node {1}   (q15)
+        (q15) edge  node {$\epsilon$} (q16)
+        (q16) edge  node {0}  (q17)
+        (q17) edge  [bend right] node {$\epsilon$} (q1);        
+                                                   
+ \end{tikzpicture}
+\end{center}
 
 \end{document}
