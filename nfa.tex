@@ -419,4 +419,29 @@ Regular expression and it diagram DFA:
  \end{tikzpicture}
 \end{center}
 
+\textbf{5a. \{w $|$ w starts and ends with the same symbol\}}\\
+\begin{center}
+S $\rightarrow$ 0T0 $|$ 1T1 $|$ 0 $|$ 1\\
+T $\rightarrow$ 0T $|$ 1T $|$ $\epsilon$ \\
+\end{center}
+
+\textit{ Informal description: We will nondeterministically guess if the  string has  only one symbol in which  case we accept it without using the stack. Then we will read every other symbol and nondeterministically guess if that is the last symbol read. If the last symbol read then matches the symbol on the stack and there is no more input we accept. Otherwise we reject. }\\
+
+\begin{center}
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm]
+% define the states in the machine
+  \node[initial,state] 	(q1)      				{$q_1$};
+  \node[state]  	(q2) [above right of=q1]           	{$q_2$};
+  \node[state, accepting]     (q3) [below right of=q2]  	{$q_3$};
+
+% define the links
+  \path[->] (q1)  edge [bend right, align=center]	node {$0, \epsilon \rightarrow 0$ \\ $1, \epsilon \rightarrow 1$} 	(q2)
+             edge [bend right, align=center] node {$0, \epsilon \rightarrow \epsilon $ \\ $1, \epsilon \rightarrow \epsilon$} (q3)
+        (q2) edge [loop above, align=center]  	node {$0, 0 \rightarrow \epsilon$ \\ $1, 1 \rightarrow \epsilon$} 	(q2)
+             edge [bend left, align=center]	node {$0, 0 \rightarrow \epsilon$ \\ $1, 1 \rightarrow \epsilon$}  	(q3);
+        
+\end{tikzpicture}
+\end{center}
+
+
 \end{document}
