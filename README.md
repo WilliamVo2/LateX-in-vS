@@ -18,8 +18,9 @@
 - Regular expression and its DFA diagram.
 - Palindrome diagram.
 - Pictorial for regular expression: (aa|ba|bb)∗(a|b)
-- ![sum](sum.png) in regular expressio
+- ![sum](sum.png) in regular expression
 - M machine start and end the same symbol
+- Added at least three 0's pictorial
 
 
 ## Set up:
