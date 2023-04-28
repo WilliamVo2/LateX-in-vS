@@ -21,7 +21,7 @@
 - ![sum](sum.png) in regular expression
 - M machine start and end the same symbol
 - Added at least three 0's pictorial
-
+- Added the length of w is odd and its middle symbol is 0's
 
 ## Set up:
 - `brew install --cask mactex`
