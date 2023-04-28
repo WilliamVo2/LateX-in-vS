@@ -473,5 +473,31 @@ T $\rightarrow$ 0T $|$ 1T $|$ $\epsilon$ \\
  \end{tikzpicture}
 \end{center}
 
+\textbf{c. \{w $|$ the length of w is odd and its middle symbol is 0's\}}\\
+
+S $\rightarrow$ 0 $|$  0S0 $|$ 0S1 $|$ 1S0 $|$ 1S1 \\
+\textit{Formal description: The PDA scans across the string and push the symbol onto the stack. At some point it nondeterministically guesses where the middle is. It looks at the middle symbol. If that symbol is a 1, it rejects. Otherwise, it scans the rest of the string, and for each character scanned, it pops one element off of its stack. If the stack is empty when it finishes reading the input (ex: it correctly guessed the middle then it accepts.}\\
+
+\begin{center}
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=3cm]
+% define the states in the machine
+  \node[initial,state] 	(q1)      				{$q_1$};
+  \node[state]  	(q2) [right of=q1]           	{$q_2$};
+  \node[state]         		(q3) [right of=q2]  	{$q_3$};
+  \node[state, accepting]    (q4) [right of=q3]  	{$q_4$};
+  \node[state]    (q5) [above right of=q2]  	{$q_5$};
+
+% define the links
+  \path[->] (q1)  edge [bend left, align=center] 	node {$0,\epsilon \rightarrow \epsilon$ \\ $1, \epsilon \rightarrow \epsilon$} 	(q2)
+        (q2) edge  	node {$0, \epsilon \rightarrow \epsilon$} 	(q3)
+             edge 	node {$1, \epsilon \rightarrow \epsilon$}  	(q5)
+        (q3) edge [bend left]  	node {$0, \epsilon \rightarrow \epsilon$} 	(q2)
+             edge   node {$1, \epsilon \rightarrow \epsilon$} (q4)
+         (q4) edge [loop right, align=center] node {$0, \epsilon \rightarrow \epsilon $ \\ $1, \epsilon \rightarrow \epsilon $} (q4)     
+         (q5) edge [loop right, align=center] node {$0, \epsilon \rightarrow \epsilon$ \\ $1, \epsilon \rightarrow \epsilon$} (q5);
+             
+\end{tikzpicture}
+\end{center}
+
 
 \end{document}
