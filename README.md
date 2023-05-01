@@ -22,7 +22,7 @@
 - M machine start and end the same symbol
 - Added at least three 0's pictorial
 - Added the length of w is odd and its middle symbol is 0's
-
+- Modify machine recognize even number of 0s.
 ## Set up:
 - `brew install --cask mactex`
 
