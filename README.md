@@ -10,6 +10,7 @@
 ![D-machine](D-machine.png)
 ![picSum](picSum.png)
 ![lengthOdd](lengthOdd.png)
+![machine2](machine2.png)
 
 
 - Create table, pictorial diagram.
