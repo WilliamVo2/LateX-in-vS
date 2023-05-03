@@ -10,6 +10,8 @@
 ![D-machine](D-machine.png)
 ![picSum](picSum.png)
 ![lengthOdd](lengthOdd.png)
+![threeZero](three0.png)
+![middle.png](middle.png)
 ![machine2](machine2.png)
 
 
