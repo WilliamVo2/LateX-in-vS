@@ -529,5 +529,98 @@ $\delta$ transition function as TM state diagram:\\
 \end{tikzpicture}
 \end{center}
 
+\textbf{\textit{b. The folowing are DFA for two languages: }}\\
+\{w$|$ w starts with and a\}\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state]  	(q2)   	    {$q_2$};
+  \node[state]  (q1)  [right of=q2]   {$q_1$};
+  \node [state, accepting]   (q3) [below of=q2]  {$q_3$};
+  
+
+% define the links
+  \path[ ->] (q2) edge   node {b} (q1) 
+              edge   node {a}     (q3)
+         (q1) edge [loop above]  node {a,b}  (q1)
+        (q3) edge    [loop right] node {a,b} (q3);
+        
+              
+ \end{tikzpicture}
+\end{center}
+
+\{w$|$ w has at most one b\}\\
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state, accepting]   (q1) 
+{A};
+  \node[state, accepting]  	(q2)   [right of=q1]  	    
+{B};
+  \node[state] 	(q3)   [ right of=q2]    				{C};
+  
+% define the links
+  \path[->] (q1) edge [loop above] node {a} 	(q1)
+             edge            node {b} 	(q2)
+        (q2) edge  [loop above] node {a} (q2) 
+             edge              node {b} (q3)  
+        (q3) edge [loop above] node {a,b}	(q3);               
+                
+ \end{tikzpicture}
+\end{center}
+
+Combining them using the intersection construction gives the folowing DFA: \\
+ 
+ \begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  
+  \node[initial, state]   (q4) 
+{2A};
+  \node[state]  	(q5)   [right of=q4]  	    
+{2B};
+  \node[state] 	(q6)   [ right of=q5]    	
+{2C};
+  \node[state]   (q1)   [above of=q3]              
+{1A};
+  \node[state]  	(q2)   [right of=q1]  	    
+{1B};
+  \node[state] 	(q3)   [right of=q2]    				{1C};
+  
+  \node[state, accepting]   (q7)    [below of=q4]
+{3A};
+  \node[state, accepting]  	(q8)   [right of=q7]  	    
+{3B};
+  \node[state] 	(q9)   [right of=q8]    				{3C};
+  
+ 
+
+% define the links
+  \path[->] (q1) edge [loop above]  node {a} 	(q1)
+             edge          node {b} 	(q2)
+        (q2) edge  [loop above]   node {a}    (q3) 
+             edge          node {b} (q3)  
+        (q3) edge  [loop right]     node {a,b}   (q3)
+             
+        (q4) edge         node {b}  (q2)
+             edge      node    {a}   (q7)  
+        (q5) edge       node {b} 	(q3)
+             edge             node {a} 	(q8)
+        (q6) edge           node {b}    (q3) 
+             edge              node {a} (q9)  
+        (q7) edge           node {b}	   (q8)
+             edge  [loop below]   node {a}  (q7)
+        (q8) edge         node {b}  (q9)
+             edge  [loop below]   node {a}   (q8)
+        (q9) edge  [loop right]  node {a,b}  (q9);
+        
+        
+ \end{tikzpicture}
+\end{center}
+
 
 \end{document}

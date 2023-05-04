@@ -13,6 +13,7 @@
 ![threeZero](three0.png)
 ![middle.png](middle.png)
 ![machine2](machine2.png)
+![startAB](startAB.png)
 
 
 - Create table, pictorial diagram.
@@ -26,6 +27,7 @@
 - Added at least three 0's pictorial
 - Added the length of w is odd and its middle symbol is 0's
 - Modify machine recognize even number of 0s.
+-DFA start with A and has most B.
 ## Set up:
 - `brew install --cask mactex`
 
