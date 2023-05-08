@@ -622,5 +622,77 @@ Combining them using the intersection construction gives the folowing DFA: \\
  \end{tikzpicture}
 \end{center}
 
+\textbf{\textit{c. The folowing are DFA for two languages: }}\\
+\{w$|$ w has an odd number of a's\}\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state]   (q1) 
+{$q_1$};
+  \node[state, accepting]  	(q2)   [right of=q1]  	    
+{$q_2$};
+  
+
+% define the links
+  \path[->] (q1) edge [loop above] node {b} 	(q1)
+             edge            node {a} 	(q2)
+        (q2) edge  [loop above] node {b} (q2) 
+              edge [bend left]  node {a}     (q1); 
+                    
+ \end{tikzpicture}
+\end{center}
+
+\{w$|$ w ends with a b\}\\
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state]   (q1) 
+{A};
+  \node[state, accepting]  	(q2)   [right of=q1]  	    
+{B};
+  
+
+% define the links
+  \path[->] (q1) edge [loop above] node {a} 	(q1)
+             edge            node {b} 	(q2)
+        (q2) edge  [loop above] node {b} (q2) 
+              edge [bend left]  node {a}     (q1);   
+              
+ \end{tikzpicture}
+\end{center}
+
+Combining them using the intersection construction gives the folowing DFA: \\
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  
+  \node[initial, state]   (q1) 
+{1A};
+  \node[state]  	(q2)   [right of=q1]  	    
+{1B};
+  \node[state] 	(q3)   [ below of=q1]    	
+{2A};
+  \node[state]   (q4)   [right of=q3]              
+{2B};
+ 
+
+% define the links
+  \path[->] (q1) edge   node {b} 	(q2)
+             edge  [bend left]     node {a} 	(q3)
+        (q2) edge  [loop above]   node {b}    (q2) 
+             edge          node {a} (q4) 
+             edge         node  {a}  (q3) 
+        (q3) edge         node {b}   (q4)
+             edge        node  {a}   (q1)
+             
+        (q4) edge         node {a}  (q1)
+             edge  [loop right]    node    {b}   (q4);  
+       
+ \end{tikzpicture}
+\end{center}
 
 \end{document}
