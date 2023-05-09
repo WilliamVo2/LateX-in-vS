@@ -14,6 +14,7 @@
 ![middle.png](middle.png)
 ![machine2](machine2.png)
 ![startAB](startAB.png)
+![oddA](oddAendB.png)
 
 
 - Create table, pictorial diagram.
