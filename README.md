@@ -30,6 +30,7 @@
 - Modify machine recognize even number of 0s.
 - DFA start with A and has most B.
 - Define machine M3 with odd's number a's and end with a|b.
+- Convert NFA to DFA.
 ## Set up:
 - `brew install --cask mactex`
 

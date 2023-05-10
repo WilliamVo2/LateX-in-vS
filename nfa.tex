@@ -694,5 +694,33 @@ Combining them using the intersection construction gives the folowing DFA: \\
        
  \end{tikzpicture}
 \end{center}
+\textbf{6 Use theorem 1.39 to convert the folowing to nondeterministic finite automata to equivalent deterministic finite automata.}\\
+\textbf{a. }\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state, accepting]    (q0) 
+{$\{1\}$};
+  \node[state]   (q1)   [right of=q0]  	    
+{$\{2\}$};
+\node[state, accepting]    (q2)  [below right of=q0]
+{$\{1,2\}$};
+  
+\node[state]    (q3)  [right of=q2]
+{$\emptyset$};
+ 
+% define the links
+  \path[->] (q0) edge [bend left] node {b} (q1)
+             edge  node {a} (q2)
+        (q1) edge   node {b} (q0)
+             edge   node {a} (q3)
+        (q2) edge  [bend left] node {b}  (q0)
+             edge [loop below] node {a,b} (q2)
+        (q3) edge [loop right]  node {a,b}  (q3);
+                                              
+ \end{tikzpicture}
+\end{center}
 
 \end{document}
