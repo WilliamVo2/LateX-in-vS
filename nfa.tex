@@ -723,4 +723,32 @@ Combining them using the intersection construction gives the folowing DFA: \\
  \end{tikzpicture}
 \end{center}
 
+\textbf{b.}\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[state, accepting]    (q0) 
+{$\{1,2\}$};
+  \node[state, accepting]   (q1)   [above right of=q0]  	    
+{$\{2,3\}$};
+\node[state, accepting]    (q2)  [below right of=q1]
+{$\{1,2,3\}$};
+  
+\node[state]    (q3)  [below of=q0]
+{$\emptyset$};
+ 
+% define the links
+  \path[->] (q0) edge  node {a} (q2)
+             edge  node {b} (q3)
+        (q1) edge [loop right]  node {b} (q1)
+             edge  [bend right] node {a} (q0)
+        (q2) edge  [bend left] node {b}  (q0)
+             edge [loop below] node {a,b} (q2)
+        (q3) edge [loop right]  node {a,b}  (q3);
+                                              
+ \end{tikzpicture}
+\end{center}
+
 \end{document}
