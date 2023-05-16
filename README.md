@@ -1,6 +1,6 @@
 # Latex editor
 
-- Create math function and NFA by using Latex.
+- Create math function, NFA and DFA by using Latex.
 
 ## Features:
 ![math](math.png)
@@ -15,6 +15,7 @@
 ![machine2](machine2.png)
 ![startAB](startAB.png)
 ![oddA](oddAendB.png)
+![convertNFAtoDFA](convertNFAtoDFA.png)
 
 
 - Create table, pictorial diagram.
