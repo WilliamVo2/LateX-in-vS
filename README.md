@@ -32,6 +32,7 @@
 - DFA start with A and has most B.
 - Define machine M3 with odd's number a's and end with a|b.
 - Convert NFA to DFA.
+- DFA any string except 11 and 111.
 ## Set up:
 - `brew install --cask mactex`
 

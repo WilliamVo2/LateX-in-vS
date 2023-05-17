@@ -751,4 +751,35 @@ Combining them using the intersection construction gives the folowing DFA: \\
  \end{tikzpicture}
 \end{center}
 
+\textbf{ 7 a. \{ w$|$ w is any string except 11 and 111\}}\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state, accepting]     (q1) 
+{$q_1$};
+  \node[state, accepting]   (q2)   [right of=q1]  	    
+{$q_2$};
+  \node[state]   (q3)   [right of=q2]
+{$q_3$};
+  \node[state]   (q4)   [right of=q3]
+{$q_4$};
+  \node[state, accepting]   (q5)   [below of=q2]
+{$q_5$};
+  
+% define the links
+  \path[->] (q1) edge     node {1} 	(q2)
+             edge         node {0}   (q5)
+        (q2) edge         node {1}   (q3)
+             edge         node {0}   (q5)  
+        (q3) edge         node {1}   (q4)
+             edge         node {0}   (q5)
+        (q4) edge         node {0,1}  (q5)
+        (q5) edge [loop right]  node {0,1}   (q5);
+        
+                               
+ \end{tikzpicture}
+\end{center}
+
 \end{document}
