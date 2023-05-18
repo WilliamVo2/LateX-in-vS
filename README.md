@@ -16,6 +16,7 @@
 ![startAB](startAB.png)
 ![oddA](oddAendB.png)
 ![convertNFAtoDFA](convertNFAtoDFA.png)
+![except](except.png)
 
 
 - Create table, pictorial diagram.
