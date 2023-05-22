@@ -17,6 +17,7 @@
 ![oddA](oddAendB.png)
 ![convertNFAtoDFA](convertNFAtoDFA.png)
 ![except](except.png)
+![theorem1](theorem1.png)
 
 
 - Create table, pictorial diagram.
