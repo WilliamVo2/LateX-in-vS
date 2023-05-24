@@ -18,6 +18,7 @@
 ![convertNFAtoDFA](convertNFAtoDFA.png)
 ![except](except.png)
 ![theorem1](theorem1.png)
+![union](union.png)
 
 
 - Create table, pictorial diagram.
@@ -35,6 +36,7 @@
 - Define machine M3 with odd's number a's and end with a|b.
 - Convert NFA to DFA.
 - DFA any string except 11 and 111.
+- DFA recognize union language ((8a, 8b)).
 ## Set up:
 - `brew install --cask mactex`
 
