@@ -350,7 +350,7 @@ Regular expression and it diagram DFA:
 \end{center}
 \textbf{4c.  $(0\cup 1\sum)(\sum\sum)^*$ }  in regular expression\\
 
-\textbf{5. Give an NFA recognizing the language $(01\cup 001 \cup 010)^*$}\\
+\textbf{Example 5. Give an NFA recognizing the language $(01\cup 001 \cup 010)^*$}\\
 
 \begin{center}
  \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
@@ -443,7 +443,7 @@ T $\rightarrow$ 0T $|$ 1T $|$ $\epsilon$ \\
 \end{tikzpicture}
 \end{center}
 
-\textbf{b.  \{ w$|$ w has length at least 3 and third symbol is a 0\}}\\
+\textbf{5b.  \{ w$|$ w has length at least 3 and third symbol is a 0\}}\\
 
 \begin{center}
  \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
@@ -473,7 +473,7 @@ T $\rightarrow$ 0T $|$ 1T $|$ $\epsilon$ \\
  \end{tikzpicture}
 \end{center}
 
-\textbf{c. \{w $|$ the length of w is odd and its middle symbol is 0's\}}\\
+\textbf{5c. \{w $|$ the length of w is odd and its middle symbol is 0's\}}\\
 
 S $\rightarrow$ 0 $|$  0S0 $|$ 0S1 $|$ 1S0 $|$ 1S1 \\
 \textit{Formal description: The PDA scans across the string and push the symbol onto the stack. At some point it nondeterministically guesses where the middle is. It looks at the middle symbol. If that symbol is a 1, it rejects. Otherwise, it scans the rest of the string, and for each character scanned, it pops one element off of its stack. If the stack is empty when it finishes reading the input (ex: it correctly guessed the middle then it accepts.}\\
@@ -498,7 +498,7 @@ S $\rightarrow$ 0 $|$  0S0 $|$ 0S1 $|$ 1S0 $|$ 1S1 \\
              
 \end{tikzpicture}
 \end{center}
-\textbf{ 6.Modify machine M2 to recognize even number of 0s and draw the state diagram.}\\
+\textbf{ Example 6.Modify machine M2 to recognize even number of 0s and draw the state diagram.}\\
 $\sum$ =\{0\}\\
 $\Gamma$=\{0,x,\textvisiblespace\}\\
 $\delta$ transition function as TM state diagram:\\
@@ -694,7 +694,7 @@ Combining them using the intersection construction gives the folowing DFA: \\
        
  \end{tikzpicture}
 \end{center}
-\textbf{6 Use theorem 1.39 to convert the folowing to nondeterministic finite automata to equivalent deterministic finite automata.}\\
+\textbf{7. Use theorem 1.39 to convert the folowing to nondeterministic finite automata to equivalent deterministic finite automata.}\\
 \textbf{a. }\\
 
 \begin{center}
@@ -751,7 +751,7 @@ Combining them using the intersection construction gives the folowing DFA: \\
  \end{tikzpicture}
 \end{center}
 
-\textbf{ 7 a. \{ w$|$ w is any string except 11 and 111\}}\\
+\textbf{ c. \{ w$|$ w is any string except 11 and 111\}}\\
 
 \begin{center}
  \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
