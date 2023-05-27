@@ -11,6 +11,7 @@
 ![picSum](picSum.png)
 ![lengthOdd](lengthOdd.png)
 ![threeZero](three0.png)
+![nfa5.png](nfa5.png)
 ![middle.png](middle.png)
 ![machine2](machine2.png)
 ![startAB](startAB.png)
