@@ -20,6 +20,7 @@
 ![except](except.png)
 ![theorem1](theorem1.png)
 ![union](union.png)
+![empty](empty.png)
 
 
 - Create table, pictorial diagram.
