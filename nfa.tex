@@ -880,5 +880,22 @@ Combining them using the intersection construction gives the folowing DFA: \\
  \end{tikzpicture}
 \end{center}
 
+\textbf{c.  The empty state}\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state, accepting]    (q0) 
+{$q_0$};
+  \node[state]   (q1)   [right of=q0]  	    
+{$q_1$};
+
+  
+% define the links
+  \path[->] (q0) edge  node {$\epsilon$} (q1);
+                                              
+ \end{tikzpicture}
+\end{center}
 
 \end{document}
