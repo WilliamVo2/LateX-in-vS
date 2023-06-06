@@ -919,5 +919,46 @@ Combining them using the intersection construction gives the folowing DFA: \\
  \end{tikzpicture}
 \end{center}
 
+\textbf{ l. \{w$|$ w contains an even number of 0s, or contain exactly two 1s\}}\\
+
+\begin{center}
+ \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=2cm]
+ 
+% define the states in the machine
+  \node[initial, state, accepting]    (q0)
+ {$q_0$};
+  \node[state]     (q1) [below of=q0]
+{$q_1$};
+  \node[state, accepting]   (q2)   [right of=q0]  	    
+{$q_2$};
+  \node[state]   (q3)   [below of=q2]
+{$q_3$};
+  \node[state, accepting]   (q4)   [right of=q2]
+{$q_4$};
+  \node[state, accepting]   (q5)   [below of=q4]
+{$q_5$};
+  \node[state]   (q6)   [right of=q4]
+{$q_6$};
+  
+% define the links
+  \path[->] (q0) edge node {1}   (q2)
+             edge [bend left]    node {0}   (q1)
+        (q1) edge     node {1} 	(q3)
+             edge         node {0}  (q0)
+        (q2) edge         node {1}   (q4)
+             edge [bend left]       node {0}   (q3)     
+        (q3) edge         node {0}   (q2) 
+             edge         node {1}   (q5)  
+        (q4) edge         node {1}  (q6)
+             edge [bend left]       node {0}   (q5)
+        (q5) edge  [bend right]       node {1}   (q6)
+             edge         node {0}   (q4)
+        (q6) edge   [loop right] node {0,1} (q6);
+        
+                                    
+ \end{tikzpicture}
+\end{center}
+
+
 
 \end{document}
