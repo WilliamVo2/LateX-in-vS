@@ -22,6 +22,7 @@
 ![union](union.png)
 ![empty](empty.png)
 ![pictorial](pictorial8.png)
+![ex9](ex9.png)
 
 
 - Create table, pictorial diagram.
@@ -41,6 +42,7 @@
 - DFA any string except 11 and 111.
 - DFA recognize union language ((8a, 8b, 8d, 8l)).
 - NFA concatenation language describe in 1.6 a,1.6 b.
+- NFA ex9a
 ## Set up:
 - `brew install --cask mactex`
 
