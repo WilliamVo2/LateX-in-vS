@@ -23,7 +23,7 @@
 ![empty](empty.png)
 ![pictorial](pictorial8.png)
 ![ex9](ex9.png)
-
+![ex9b](ex9b.png)
 
 - Create table, pictorial diagram.
 - Create math function in LateX.
