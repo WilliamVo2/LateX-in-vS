@@ -23,7 +23,7 @@
 ![empty](empty.png)
 ![pictorial](pictorial8.png)
 ![ex9](ex9.png)
-
+![ex9b](ex9b.png)
 
 - Create table, pictorial diagram.
 - Create math function in LateX.
@@ -42,7 +42,7 @@
 - DFA any string except 11 and 111.
 - DFA recognize union language ((8a, 8b, 8d, 8l)).
 - NFA concatenation language describe in 1.6 a,1.6 b.
-- NFA ex9a
+- NFA ex9a, and ex9b.
 ## Set up:
 - `brew install --cask mactex`
 
